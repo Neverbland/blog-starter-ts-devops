@@ -32,5 +32,5 @@ jobs:
           aws-region: us-east-2
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - name: Deploy to S3 bucket
-        run: aws s3 sync . s3://cdkstack-neverbland45b19930-1x2sk920p7ne7 --exclude '.git/*' --exclude '.gitignore'
+      - name: Sync S3 bucket
+        run: aws s3 sync . s3://neverstack-neverbland45b19930-1tlnlln25855u/assets --exclude '.git/*' --exclude '.gitignore'
