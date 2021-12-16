@@ -14,3 +14,16 @@ jobs:
 
       - name: Use Node.js
         uses: actions/setup-node@v2
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-east-2
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Deploy to S3 bucket
+        run: aws s3 sync . s3://cdkstack-neverbland45b19930-1x2sk920p7ne7/ --exclude '.git/*' --exclude '.gitignore'
