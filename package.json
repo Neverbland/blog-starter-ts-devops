@@ -7,14 +7,17 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@aws-cdk/aws-lambda": "^1.136.0",
+    "@aws-cdk/aws-s3": "^1.136.0",
     "classnames": "2.3.1",
     "date-fns": "2.21.3",
     "gray-matter": "4.0.3",
-    "next": "latest",
+    "next": "^12.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "remark": "13.0.0",
-    "remark-html": "13.0.1",
+    "remark-html": "^13.0.2",
+    "serverless": "^2.69.1",
     "typescript": "^4.2.4"
   },
   "devDependencies": {
