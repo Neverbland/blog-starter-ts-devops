@@ -8,7 +8,7 @@ export class CdkStack extends cdk.Stack {
 	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
 		super(scope, id, props);
 
-		const bucket = new s3.Bucket(this, 'NeverBlandBucket', {
+		const bucket = new s3.Bucket(this, 'neverbland', {
 			publicReadAccess: true,
 			removalPolicy: cdk.RemovalPolicy.DESTROY,
 			websiteIndexDocument: 'index.html',
