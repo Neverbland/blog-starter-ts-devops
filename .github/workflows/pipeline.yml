@@ -14,6 +14,13 @@ jobs:
 
       - name: Use Node.js
         uses: actions/setup-node@v2
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build & Export Project
+        run: npm run build
+
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -26,4 +33,4 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Deploy to S3 bucket
-        run: aws s3 sync . s3://cdkstack-neverbland45b19930-1x2sk920p7ne7/ --exclude '.git/*' --exclude '.gitignore'
+        run: aws s3 sync . s3://cdkstack-neverbland45b19930-1x2sk920p7ne7 --exclude '.git/*' --exclude '.gitignore'
